@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Tập Ngữ Pháp Tiếng Anh - Thì Quá Khứ Đơn</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            min-height: 100vh;
+        }
+        .correct-input {
+            border-color: #10b981 !important;
+            background-color: #ecfdf5 !important;
+            color: #047857 !important;
+        }
+        .incorrect-input {
+            border-color: #ef4444 !important;
+            background-color: #fef2f2 !important;
+            color: #b91c1c !important;
+        }
+        .choice-btn {
+            transition: all 0.2s ease;
+        }
+        .choice-btn.selected {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #2563eb;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+        }
+        .choice-btn.correct-choice {
+            background-color: #10b981 !important;
+            color: white !important;
+            border-color: #059669 !important;
+        }
+        .choice-btn.incorrect-choice {
+            background-color: #ef4444 !important;
+            color: white !important;
+            border-color: #dc2626 !important;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 text-slate-800">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl mb-4 text-2xl">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">Bài Tập Ngữ Pháp: Thì Quá Khứ Đơn (Simple Past)</h1>
+            <p class="text-slate-500 max-w-xl mx-auto text-sm md:text-base">Hãy hoàn thành cả hai bài tập dưới đây để kiểm tra kiến thức về các động từ có quy tắc và bất quy tắc!</p>
+            
+            <!-- Overall Score Dashboard -->
+            <div id="overall-score-card" class="mt-6 p-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl text-white hidden">
+                <div class="flex flex-wrap items-center justify-around gap-4">
+                    <div class="text-center">
+                        <p class="text-xs uppercase tracking-wider text-blue-100">Tổng điểm</p>
+                        <p id="total-score-text" class="text-3xl font-extrabold">0 / 31</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs uppercase tracking-wider text-blue-100">Tỷ lệ chính xác</p>
+                        <p id="total-percent-text" class="text-3xl font-extrabold">0%</p>
+                    </div>
+                    <div class="text-center">
+                        <p id="feedback-emoji" class="text-4xl">🎯</p>
+                        <p id="feedback-msg" class="text-xs font-medium text-blue-100 mt-1">Hãy cố gắng nhé!</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Exercise 1 -->
+        <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 mb-8">
+            <div class="flex items-center justify-between border-b pb-4 mb-6">
+                <div>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded-md">Bài 1</span>
+                    <h2 class="text-lg md:text-xl font-bold text-slate-800 inline ml-2">Complete the text with the simple past forms</h2>
+                </div>
+                <div id="ex1-score-badge" class="hidden text-sm font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">
+                    Điểm: <span id="ex1-score">0</span>/15
+                </div>
+            </div>
+
+            <p class="text-slate-600 mb-6 italic text-sm">Điền dạng quá khứ đơn phù hợp của động từ trong ngoặc vào chỗ trống bên dưới:</p>
+
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/60 leading-loose text-base md:text-lg">
+                <p>
+                    Stan Lee 
+                    <span class="inline-block my-1">
+                        <b>(1)</b> <input type="text" data-ex1="0" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="be">
+                    </span>
+                    an American comic book writer. He 
+                    <span class="inline-block my-1">
+                        <b>(2)</b> <input type="text" data-ex1="1" class="ex1-input w-32 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="be born">
+                    </span> 
+                    in 1922 in New York City. He 
+                    <span class="inline-block my-1">
+                        <b>(3)</b> <input type="text" data-ex1="2" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="have">
+                    </span>
+                    one younger brother, Larry. As a boy, Lee 
+                    <span class="inline-block my-1">
+                        <b>(4)</b> <input type="text" data-ex1="3" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="like">
+                    </span>
+                    writing. In high school, he 
+                    <span class="inline-block my-1">
+                        <b>(5)</b> <input type="text" data-ex1="4" class="ex1-input w-32 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="enter">
+                    </span>
+                    a weekly writing competition by a popular newspaper. Lee 
+                    <span class="inline-block my-1">
+                        <b>(6)</b> <input type="text" data-ex1="5" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="win">
+                    </span>
+                    the competition three weeks in a row. The newspaper 
+                    <span class="inline-block my-1">
+                        <b>(7)</b> <input type="text" data-ex1="6" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="tell">
+                    </span>
+                    him to become a professional writer. In 1942, Lee 
+                    <span class="inline-block my-1">
+                        <b>(8)</b> <input type="text" data-ex1="7" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="join">
+                    </span>
+                    the US Army. While in the army, Lee 
+                    <span class="inline-block my-1">
+                        <b>(9)</b> <input type="text" data-ex1="8" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="write">
+                    </span>
+                    one story a week for a comic book company. In the 1960s, Lee 
+                    <span class="inline-block my-1">
+                        <b>(10)</b> <input type="text" data-ex1="9" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="help">
+                    </span>
+                    create the Fantastic Four for Marvel Comics. The characters 
+                    <span class="inline-block my-1">
+                        <b>(11)</b> <input type="text" data-ex1="10" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="be">
+                    </span>
+                    so popular that Marvel Comics 
+                    <span class="inline-block my-1">
+                        <b>(12)</b> <input type="text" data-ex1="11" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="ask">
+                    </span>
+                    Lee to help create more characters and stories. Lee 
+                    <span class="inline-block my-1">
+                        <b>(13)</b> <input type="text" data-ex1="12" class="ex1-input w-32 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="become">
+                    </span>
+                    famous for helping to create such characters as the Hulk, Thor, Iron Man, the X-Men, Daredevil, Doctor Strange and Spider-Man. Lee 
+                    <span class="inline-block my-1">
+                        <b>(14)</b> <input type="text" data-ex1="13" class="ex1-input w-28 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="die">
+                    </span>
+                    on November 12, 2018. He 
+                    <span class="inline-block my-1">
+                        <b>(15)</b> <input type="text" data-ex1="14" class="ex1-input w-32 px-3 py-1 text-sm md:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium" placeholder="receive">
+                    </span>
+                    many awards during his lifetime.
+                </p>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-4">
+                <button onclick="checkEx1()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-check"></i> Kiểm tra Bài 1
+                </button>
+            </div>
+        </section>
+
+        <!-- Exercise 2 -->
+        <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 mb-8">
+            <div class="flex items-center justify-between border-b pb-4 mb-6">
+                <div>
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded-md">Bài 2</span>
+                    <h2 class="text-lg md:text-xl font-bold text-slate-800 inline ml-2">Choose the correct words to complete the sentences</h2>
+                </div>
+                <div id="ex2-score-badge" class="hidden text-sm font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">
+                    Điểm: <span id="ex2-score">0</span>/16
+                </div>
+            </div>
+
+            <p class="text-slate-600 mb-6 italic text-sm">Nhấp chọn đáp án đúng cho mỗi vị trí lựa chọn trong các câu dưới đây:</p>
+
+            <div id="ex2-container" class="space-y-6">
+                <!-- Rendered dynamically by Javascript -->
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+                <button onclick="checkEx2()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-check"></i> Kiểm tra Bài 2
+                </button>
+            </div>
+        </section>
+
+        <!-- Control Actions -->
+        <div class="flex justify-center pb-12">
+            <button onclick="resetAll()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-medium px-8 py-3 rounded-xl transition-all flex items-center gap-2 shadow-sm">
+                <i class="fa-solid fa-rotate-right"></i> Làm lại toàn bộ
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Data for Exercise 1
+        const ex1Answers = [
+            "was", "was born", "had", "liked", "entered", 
+            "won", "told", "joined", "wrote", "helped", 
+            "were", "asked", "became", "died", "received"
+        ];
+
+        // Data for Exercise 2
+        const ex2Questions = [
+            {
+                id: 1,
+                parts: [
+                    { text: "1. Ilyas " },
+                    { key: "q1_1", options: ["meeted", "met", "metted"], correct: "met", explanation: "'meet' là động từ bất quy tắc, quá khứ đơn là 'met' (không thêm -ed)." },
+                    { text: " Leyla when they " },
+                    { key: "q1_2", options: ["were", "was", "been"], correct: "were", explanation: "Chủ ngữ là 'they' (số nhiều) nên dùng động từ to be quá khứ là 'were'." },
+                    { text: " at university together." }
+                ]
+            },
+            {
+                id: 2,
+                parts: [
+                    { text: "2. The taxi " },
+                    { key: "q2_1", options: ["stopped", "stoped", "stopt"], correct: "stopped", explanation: "'stop' là động từ 1 âm tiết kết thúc bằng 1 nguyên âm + 1 phụ âm, cần gấp đôi phụ âm cuối trước khi thêm -ed -> 'stopped'." },
+                    { text: " in front of the station, and she " },
+                    { key: "q2_2", options: ["gived", "gaved", "gave"], correct: "gave", explanation: "'give' là động từ bất quy tắc, quá khứ đơn là 'gave'." },
+                    { text: " the driver €20." }
+                ]
+            },
+            {
+                id: 3,
+                parts: [
+                    { text: "3. He " },
+                    { key: "q3_1", options: ["were", "was", "am"], correct: "was", explanation: "Chủ ngữ 'He' (ngôi thứ 3 số ít) đi với động từ to be quá khứ là 'was'." },
+                    { text: " born in 1942 and " },
+                    { key: "q3_2", options: ["died", "die", "dyed"], correct: "died", explanation: "Động từ 'die' có quy tắc, kết thúc bằng 'e' nên chỉ cần thêm -d -> 'died'." },
+                    { text: " in 2021." }
+                ]
+            },
+            {
+                id: 4,
+                parts: [
+                    { text: "4. When they " },
+                    { key: "q4_1", options: ["find", "finded", "found"], correct: "found", explanation: "'find' là động từ bất quy tắc, dạng quá khứ đơn là 'found'." },
+                    { text: " the backpack in the park, they " },
+                    { key: "q4_2", options: ["taked", "took", "taken"], correct: "took", explanation: "'take' là động từ bất quy tắc, quá khứ đơn là 'took' ('taken' là quá khứ phân tử)." },
+                    { text: " it to the police station." }
+                ]
+            },
+            {
+                id: 5,
+                parts: [
+                    { text: "5. Last year, my brother " },
+                    { key: "q5_1", options: ["goed", "was", "went"], correct: "went", explanation: "'go' là động từ bất quy tắc, quá khứ đơn là 'went'." },
+                    { text: " to Las Vegas on holiday. It’s a really expensive place to visit. He " },
+                    { key: "q5_2", options: ["spent", "spended", "spented"], correct: "spent", explanation: "'spend' là động từ bất quy tắc, quá khứ đơn chuyển 'd' thành 't' -> 'spent'." },
+                    { text: " over $2,000 in three days!" }
+                ]
+            },
+            {
+                id: 6,
+                parts: [
+                    { text: "6. My mother " },
+                    { key: "q6_1", options: ["maked", "maid", "made"], correct: "made", explanation: "'make' là động từ bất quy tắc, quá khứ đơn là 'made'." },
+                    { text: " a big birthday cake for my brother yesterday, and we " },
+                    { key: "q6_2", options: ["eated", "ate", "ated"], correct: "ate", explanation: "'eat' là động từ bất quy tắc, quá khứ đơn là 'ate'." },
+                    { text: " three pieces each!" }
+                ]
+            },
+            {
+                id: 7,
+                parts: [
+                    { text: "7. My sister " },
+                    { key: "q7_1", options: ["playd", "plaied", "played"], correct: "played", explanation: "'play' kết thúc bằng một nguyên âm + 'y', khi thêm -ed giữ nguyên 'y' -> 'played'." },
+                    { text: " the piano very well when she was eight, and my parents " },
+                    { key: "q7_2", options: ["bought", "buyed", "buied"], correct: "bought", explanation: "'buy' là động từ bất quy tắc, quá khứ đơn là 'bought'." },
+                    { text: " her a guitar when she was fifteen." }
+                ]
+            },
+            {
+                id: 8,
+                parts: [
+                    { text: "8. Supattra " },
+                    { key: "q8_1", options: ["workt", "worked", "walked"], correct: "worked", explanation: "'work' là động từ có quy tắc, chỉ cần thêm -ed -> 'worked'. ('walked' nghĩa là đi bộ, không hợp nghĩa)." },
+                    { text: " hard at university and then " },
+                    { key: "q8_2", options: ["getted", "gotted", "got"], correct: "got", explanation: "'get' là động từ bất quy tắc, quá khứ đơn là 'got'." },
+                    { text: " a fantastic job in Bangkok." }
+                ]
+            }
+        ];
+
+        // User Selection Storage
+        let userChoicesEx2 = {};
+        let scores = { ex1: 0, ex2: 0 };
+        let tested = { ex1: false, ex2: false };
+
+        // Render Exercise 2
+        function renderEx2() {
+            const container = document.getElementById('ex2-container');
+            container.innerHTML = '';
+
+            ex2Questions.forEach(q => {
+                const card = document.createElement('div');
+                card.className = 'p-5 bg-slate-50 rounded-xl border border-slate-200/80 transition-all';
+                
+                let sentenceHtml = `<div class="text-base md:text-lg leading-relaxed font-normal text-slate-800">`;
+                
+                q.parts.forEach(part => {
+                    if (part.text) {
+                        sentenceHtml += `<span>${part.text}</span>`;
+                    } else if (part.key) {
+                        sentenceHtml += `<span class="inline-flex flex-wrap gap-1 mx-1 my-1 align-middle">`;
+                        part.options.forEach(opt => {
+                            sentenceHtml += `
+                                <button type="button" 
+                                    data-key="${part.key}" 
+                                    data-val="${opt}" 
+                                    onclick="selectChoice('${part.key}', '${opt}', this)" 
+                                    class="choice-btn choice-${part.key} px-3 py-1 text-sm font-medium border border-slate-300 bg-white hover:bg-slate-100 rounded-lg transition-all">
+                                    ${opt}
+                                </button>
+                            `;
+                        });
+                        sentenceHtml += `</span>`;
+                    }
+                });
+
+                sentenceHtml += `</div>`;
+                
+                // Container for explanations
+                sentenceHtml += `<div id="explain-box-${q.id}" class="mt-4 space-y-2 hidden"></div>`;
+
+                card.innerHTML = sentenceHtml;
+                container.appendChild(card);
+            });
+        }
+
+        // Handle user selection in Ex 2
+        function selectChoice(key, value, btn) {
+            userChoicesEx2[key] = value;
+            
+            // Remove 'selected' class from buttons with the same key
+            document.querySelectorAll(`.choice-${key}`).forEach(b => {
+                b.classList.remove('selected');
+            });
+            
+            // Add 'selected' to clicked button
+            btn.classList.add('selected');
+        }
+
+        // Normalize string for Ex 1 checking
+        function normalizeStr(str) {
+            return str.trim().toLowerCase().replace(/\s+/g, ' ');
+        }
+
+        // Check Exercise 1
+        function checkEx1() {
+            const inputs = document.querySelectorAll('.ex1-input');
+            let correctCount = 0;
+
+            inputs.forEach(input => {
+                const idx = parseInt(input.getAttribute('data-ex1'));
+                const userVal = normalizeStr(input.value);
+                const correctVal = normalizeStr(ex1Answers[idx]);
+
+                input.classList.remove('correct-input', 'incorrect-input');
+
+                if (userVal === correctVal) {
+                    input.classList.add('correct-input');
+                    correctCount++;
+                } else {
+                    input.classList.add('incorrect-input');
+                }
+            });
+
+            scores.ex1 = correctCount;
+            tested.ex1 = true;
+
+            document.getElementById('ex1-score').innerText = correctCount;
+            document.getElementById('ex1-score-badge').classList.remove('hidden');
+
+            updateOverallScore();
+        }
+
+        // Check Exercise 2
+        function checkEx2() {
+            let correctCount = 0;
+
+            ex2Questions.forEach(q => {
+                const explainBox = document.getElementById(`explain-box-${q.id}`);
+                explainBox.innerHTML = '';
+                let hasMistake = false;
+                let explanationHTML = '';
+
+                q.parts.forEach(part => {
+                    if (part.key) {
+                        const selectedVal = userChoicesEx2[part.key];
+                        const isCorrect = (selectedVal === part.correct);
+
+                        // Highlight choice buttons
+                        document.querySelectorAll(`.choice-${part.key}`).forEach(btn => {
+                            btn.classList.remove('correct-choice', 'incorrect-choice');
+                            const btnVal = btn.getAttribute('data-val');
+
+                            if (btnVal === part.correct) {
+                                btn.classList.add('correct-choice');
+                            } else if (btnVal === selectedVal && !isCorrect) {
+                                btn.classList.add('incorrect-choice');
+                            }
+                        });
+
+                        if (isCorrect) {
+                            correctCount++;
+                        } else {
+                            hasMistake = true;
+                            explanationHTML += `
+                                <div class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800 flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-info text-red-500 mt-0.5"></i>
+                                    <div>
+                                        <span class="font-bold">Đáp án đúng [${part.correct}]:</span> ${part.explanation}
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
+                });
+
+                if (hasMistake) {
+                    explainBox.innerHTML = explanationHTML;
+                    explainBox.classList.remove('hidden');
+                } else {
+                    explainBox.classList.add('hidden');
+                }
+            });
+
+            scores.ex2 = correctCount;
+            tested.ex2 = true;
+
+            document.getElementById('ex2-score').innerText = correctCount;
+            document.getElementById('ex2-score-badge').classList.remove('hidden');
+
+            updateOverallScore();
+        }
+
+        // Update total score dashboard
+        function updateOverallScore() {
+            const totalScore = scores.ex1 + scores.ex2;
+            const maxScore = 15 + 16; // 31 items
+            const percent = Math.round((totalScore / maxScore) * 100);
+
+            document.getElementById('overall-score-card').classList.remove('hidden');
+            document.getElementById('total-score-text').innerText = `${totalScore} / ${maxScore}`;
+            document.getElementById('total-percent-text').innerText = `${percent}%`;
+
+            const emojiEl = document.getElementById('feedback-emoji');
+            const msgEl = document.getElementById('feedback-msg');
+
+            if (percent === 100) {
+                emojiEl.innerText = '🏆';
+                msgEl.innerText = 'Xuất sắc! Bạn đạt điểm tuyệt đối!';
+            } else if (percent >= 80) {
+                emojiEl.innerText = '🌟';
+                msgEl.innerText = 'Rất tốt! Bạn nắm vững ngữ pháp rồi đấy!';
+            } else if (percent >= 50) {
+                emojiEl.innerText = '👍';
+                msgEl.innerText = 'Khá tốt! Hãy ôn lại các câu chưa đúng nhé.';
+            } else {
+                emojiEl.innerText = '📚';
+                msgEl.innerText = 'Cố gắng lên! Hãy đọc lại lời giải thích bên dưới.';
+            }
+        }
+
+        // Reset All
+        function resetAll() {
+            // Reset Ex 1
+            document.querySelectorAll('.ex1-input').forEach(input => {
+                input.value = '';
+                input.classList.remove('correct-input', 'incorrect-input');
+            });
+            document.getElementById('ex1-score-badge').classList.add('hidden');
+
+            // Reset Ex 2
+            userChoicesEx2 = {};
+            renderEx2();
+            document.getElementById('ex2-score-badge').classList.add('hidden');
+
+            // Reset scores
+            scores = { ex1: 0, ex2: 0 };
+            tested = { ex1: false, ex2: false };
+            document.getElementById('overall-score-card').classList.add('hidden');
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            renderEx2();
+        };
+    </script>
+</body>
+</html>
